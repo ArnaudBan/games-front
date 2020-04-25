@@ -1,26 +1,23 @@
 <template>
     <div class="LayoutDefault">
-        <nav class="LayoutDefault__nav">
-            <router-link to="/">Home</router-link> |
-            <button @click="logout">Lougout</button>
-        </nav>
-        <main class="LayoutDefault__main">
-            <slot/>
-        </main>
-        <footer class="LayoutDefault__footer">
-            &copy; Bionnats
-        </footer>
+        <AppBar></AppBar>
+        <v-content>
+            <v-container fluid>
+                <main class="LayoutDefault__main">
+                    <slot/>
+                </main>
+            </v-container>
+        </v-content>
+        <Footer></Footer>
     </div>
 </template>
 
 <script>
+    import AppBar from '../components/AppBar'
+    import Footer from '../components/Footer'
 
     export default {
-      methods: {
-        logout: function() {
-          this.$store.dispatch('auth/logout')
-        }
-      }
+      components: { AppBar, Footer},
     }
 
 </script>

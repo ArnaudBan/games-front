@@ -1,24 +1,24 @@
 <template>
-    <div class="game">
-        <h1>Login</h1>
-        <form id="app" @submit="loginForm" method="post">
-            <label for="email">Email</label>
-            <input
+    <v-sheet class="mx-auto pa-12" max-width="600" elevation="2">
+        <h1 class="title">Se connecter</h1>
+        <v-form id="app" @submit="loginForm" method="post">
+            <v-text-field
                 id="email"
                 v-model="email"
                 type="email"
                 name="email"
-            >
-            <label for="password">Mot de passe</label>
-            <input
+                label="Email">
+            </v-text-field>
+            <v-text-field
                 id="password"
                 v-model="password"
                 type="password"
                 name="password"
-            >
-            <input type="submit" value="Submit">
-        </form>
-    </div>
+                label="Mot de passe"
+            ></v-text-field>
+            <v-btn type="submit" color="primary">Se connecter</v-btn>
+        </v-form>
+    </v-sheet>
 </template>
 
 <script>

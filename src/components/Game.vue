@@ -1,6 +1,6 @@
 <template>
     <div class="game">
-        <h1>{{ game.title }}</h1>
+        <h1 class="title">{{ game.title }}</h1>
     </div>
 </template>
 

@@ -1,11 +1,22 @@
 <template>
   <div class="games-list">
-    <div v-if="loading">Loading</div>
-    <ul v-else>
-      <li v-for="game in games" v-bind:key="game.id">
-        <router-link :to="{name:'game', params: { id: game.id}}">{{ game.title}}</router-link>
-      </li>
-    </ul>
+    <v-progress-linear indeterminate v-if="loading"></v-progress-linear>
+    <v-list v-else>
+      <v-subheader>Games</v-subheader>
+      <v-list-item-group color="primary">
+        <v-list-item
+          v-for="game in games"
+          :key="game.id"
+          :to="{name:'game', params: { id: game.id}}"
+          link
+        >
+          <v-list-item-content>
+            <v-list-item-title v-text="game.title" ></v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list-item-group>
+    </v-list>
+
   </div>
 </template>
 
